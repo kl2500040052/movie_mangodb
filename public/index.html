@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CineVault | Movie Manager</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar"><div class="brand"><span class="logo">▶</span> CINEVAULT</div><span class="connected"><i></i> MongoDB Atlas</span></header>
+  <main class="wrap">
+    <section class="hero">
+      <div><p class="eyebrow">YOUR PERSONAL MOVIE LIBRARY</p><h1>Movie Collection</h1><p class="sub">Add, explore and manage your favourite films.</p></div>
+      <button class="primary" id="addBtn">＋ Add movie</button>
+    </section>
+    <section class="stats">
+      <article><span>Total movies</span><strong id="total">0</strong></article>
+      <article><span>Average rating</span><strong id="average">—</strong></article>
+      <article><span>Genres</span><strong id="genres">0</strong></article>
+    </section>
+    <section class="toolbar"><div><h2>All movies</h2><p class="muted">Your database records</p></div><input id="search" type="search" placeholder="Search movies, genre, director..."></section>
+    <section id="movieGrid" class="grid"><p class="empty">Loading movies...</p></section>
+    <p id="notice" class="notice" role="status"></p>
+  </main>
+  <dialog id="movieDialog">
+    <form id="movieForm">
+      <div class="dialog-head"><div><p class="eyebrow">MOVIE DETAILS</p><h2 id="dialogTitle">Add a movie</h2></div><button type="button" class="close" id="closeBtn">×</button></div>
+      <label>Movie name<input name="name" required placeholder="e.g. RRR"></label>
+      <div class="two"><label>Genre<input name="genre" required placeholder="Action"></label><label>Year<input name="year" type="number" min="1888" max="2100" required placeholder="2022"></label></div>
+      <label>Director<input name="director" required placeholder="Director name"></label>
+      <label>Star cast<input name="star" required placeholder="Lead actor(s)"></label>
+      <label>Star rating (0–10)<input name="rating" type="number" min="0" max="10" step="0.1" required placeholder="9"></label>
+      <div class="actions"><button type="button" class="secondary" id="cancelBtn">Cancel</button><button class="primary" type="submit" id="saveBtn">Save movie</button></div>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body></html>
